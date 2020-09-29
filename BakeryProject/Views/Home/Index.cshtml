@@ -1,8 +1,43 @@
-﻿@{
+﻿@model IEnumerable<Product>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to My Bakery</h1>  
+    <h1 class="display-4">Welcome to My Bakery</h1>
+    <div class="border border-primary p-1">
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                @*<div class="col-md-3">
+                <a href="#">
+                    <div class="productInfo">
+                        <h3>@product.Name</h3>
+                        <img class="img-fluid img-thumbnail" src="@product.ImageName" alt="Image of @product.ImageName" />
+                        <p>@product.Description</p>
+                    </div>
+                </a>
+                <div class="actions">
+                    <p class="float-left">@string.Format("{0:f}", product.Price)</p>
+                    <a class="btn btn-sm btn-danger order-button float-right">Order Now</a>
+                </div>
+            </div>*@
+            var ImagePath = "~/images/" + product.ImageName;
+            <div class="card m-3" style="min-width: 18rem; max-width:30.5%;">
+                <div class="card-header">
+                    <h3>@product.Name</h3>
+                </div>
 
+                <img class="card-img-top imageThumbnail" src="@ImagePath"
+                     asp-append-version="true" />
+                <p class="text-left m-2">@product.Description</p>
+                <div class="m-2">
+                    <p class="float-left">@string.Format("{0:f}", product.Price)</p>
+                    <a class="btn btn-sm btn-danger text-white float-right">Order Now</a>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
 </div>

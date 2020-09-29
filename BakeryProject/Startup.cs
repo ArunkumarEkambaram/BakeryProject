@@ -12,6 +12,7 @@ using BakeryProject.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using BakeryProject.Repositories;
 
 namespace BakeryProject
 {
@@ -32,6 +33,9 @@ namespace BakeryProject
                     Configuration.GetConnectionString("Bakery")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
