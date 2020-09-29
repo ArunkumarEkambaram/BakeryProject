@@ -10,6 +10,11 @@ namespace BakeryProject.Repositories
     {
         IEnumerable<Product> GetProducts();
 
+        Product GetProductById(int id);
+
         int AddNewProduct(Product product);
+
+        int EditProduct(int id, Product product);
+
     }
 }

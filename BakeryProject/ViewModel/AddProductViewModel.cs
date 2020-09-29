@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace BakeryProject.ViewModel
 {
-    public class ProductViewModel
+    public class AddProductViewModel
     {
         [Required]
         public string Name { get; set; }
@@ -19,7 +19,7 @@ namespace BakeryProject.ViewModel
         [Required]
         public float Price { get; set; }
 
-        [Required]
+        //[Required]
         //[ValidateImageFile]
         public IFormFile ImageName { get; set; }
     }
