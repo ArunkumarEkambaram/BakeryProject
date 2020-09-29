@@ -4,14 +4,16 @@ using BakeryProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BakeryProject.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200929025402_AlterColumnAddedDateWithDefaultValue")]
+    partial class AlterColumnAddedDateWithDefaultValue
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,7 @@ namespace BakeryProject.Data.Migrations
                         new
                         {
                             Id = 1,
-                            AddedDate = new DateTime(2020, 9, 29, 8, 29, 49, 252, DateTimeKind.Local).AddTicks(4961),
+                            AddedDate = new DateTime(2020, 9, 29, 8, 24, 1, 684, DateTimeKind.Local).AddTicks(1269),
                             Description = "Made of belgium chocolate with very tasty donut",
                             ImageName = "~/images/Choco_Donut.jfif",
                             Name = "Donut",
@@ -59,7 +61,7 @@ namespace BakeryProject.Data.Migrations
                         new
                         {
                             Id = 2,
-                            AddedDate = new DateTime(2020, 9, 29, 8, 29, 49, 253, DateTimeKind.Local).AddTicks(7370),
+                            AddedDate = new DateTime(2020, 9, 29, 8, 24, 1, 685, DateTimeKind.Local).AddTicks(212),
                             Description = "A delicious cup cake with hot cholocate and choco chips",
                             ImageName = "~/images/Choco_CupCake.jfif",
                             Name = "Chocolate Cup Cake",
@@ -68,7 +70,7 @@ namespace BakeryProject.Data.Migrations
                         new
                         {
                             Id = 3,
-                            AddedDate = new DateTime(2020, 9, 29, 8, 29, 49, 253, DateTimeKind.Local).AddTicks(7406),
+                            AddedDate = new DateTime(2020, 9, 29, 8, 24, 1, 685, DateTimeKind.Local).AddTicks(292),
                             Description = "Fresh baked choco cip cookies",
                             ImageName = "~/images/Cookies.jfif",
                             Name = "Cookies",
