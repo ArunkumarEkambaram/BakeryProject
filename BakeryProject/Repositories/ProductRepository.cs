@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BakeryProject.Data;
 using BakeryProject.Models;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace BakeryProject.Repositories
 {
@@ -14,6 +15,20 @@ namespace BakeryProject.Repositories
         {
             this.dbContext = dbContext;
         }
+
+        public int AddNewProduct(Product product)
+        {
+            if (product != null)
+            {
+                dbContext.Products.Add(product);
+                return dbContext.SaveChanges();
+            }
+            else
+            {
+                throw new NullReferenceException(nameof(product));
+            }
+        }
+
         public IEnumerable<Product> GetProducts()
         {
             return dbContext.Products.ToList();

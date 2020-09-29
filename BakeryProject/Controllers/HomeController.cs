@@ -25,7 +25,7 @@ namespace BakeryProject.Controllers
         {
             var products = _productRepository.GetProducts();
             return View(products);
-        }
+        }       
 
         public IActionResult Privacy()
         {

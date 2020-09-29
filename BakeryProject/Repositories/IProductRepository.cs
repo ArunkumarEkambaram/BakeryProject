@@ -9,5 +9,7 @@ namespace BakeryProject.Repositories
     public interface IProductRepository
     {
         IEnumerable<Product> GetProducts();
+
+        int AddNewProduct(Product product);
     }
 }
