@@ -28,8 +28,7 @@ namespace BakeryProject.Controllers
         }       
 
         public IActionResult Privacy()
-        {
-            throw new NullReferenceException();
+        {            
             return View();
         }        
 

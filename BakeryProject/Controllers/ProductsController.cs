@@ -67,6 +67,7 @@ namespace BakeryProject.Controllers
         {
             if (id == null)
             {
+               // return View("ProductBadRequest");
                 return BadRequest();
             }
 
@@ -74,7 +75,8 @@ namespace BakeryProject.Controllers
 
             if (product == null)
             {
-                return NotFound();
+                return View("ProductNotFound");
+                //return NotFound();
             }
 
             EditProductViewModel editProduct = new EditProductViewModel
@@ -102,7 +104,8 @@ namespace BakeryProject.Controllers
 
             if (product == null)
             {
-                return NotFound();
+                //return NotFound();
+                return View("ProductNotFound");
             }
 
             product.Name = editProduct.Name;
@@ -118,6 +121,7 @@ namespace BakeryProject.Controllers
             }
 
             var result = _productRepos.EditProduct(product.Id, product);
+
             if (result > 0)
             {
                 if (editProduct.ImageName != null)

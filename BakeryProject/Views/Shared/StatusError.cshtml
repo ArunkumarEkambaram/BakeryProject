@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = ViewData["Error"];
+}
+
+<div class="alert alert-danger m-2">
+    <h1>@ViewData["ErrorMessage"]</h1>
+</div>
+
+<hr />
+<a asp-controller="Home" asp-action="Index">Click here to go back to the Home Page</a>
+
+
