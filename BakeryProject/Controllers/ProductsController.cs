@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 using BakeryProject.Models;
 using BakeryProject.Repositories;
 using BakeryProject.ViewModel;
@@ -38,6 +34,11 @@ namespace BakeryProject.Controllers
         [HttpPost]
         public IActionResult Create(AddProductViewModel productView)
         {
+            if (productView == null)
+            {
+                return BadRequest(productView);
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(productView);
@@ -67,7 +68,7 @@ namespace BakeryProject.Controllers
         {
             if (id == null)
             {
-               // return View("ProductBadRequest");
+                // return View("ProductBadRequest");
                 return BadRequest();
             }
 

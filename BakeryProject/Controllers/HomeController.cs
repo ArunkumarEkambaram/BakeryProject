@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using System.Diagnostics;
 using BakeryProject.Models;
 using BakeryProject.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BakeryProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IProductRepository _productRepository;
 
-        public HomeController(ILogger<HomeController> logger, IProductRepository productRepository)
+        public HomeController(IProductRepository productRepository)
         {
-            _logger = logger;
             _productRepository = productRepository;
         }
 
@@ -25,12 +18,12 @@ namespace BakeryProject.Controllers
         {
             var products = _productRepository.GetProducts();
             return View(products);
-        }       
+        }
 
         public IActionResult Privacy()
-        {            
+        {
             return View();
-        }        
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

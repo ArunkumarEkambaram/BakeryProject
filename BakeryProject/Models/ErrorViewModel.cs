@@ -1,5 +1,3 @@
-using System;
-
 namespace BakeryProject.Models
 {
     public class ErrorViewModel
