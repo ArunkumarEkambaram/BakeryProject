@@ -137,6 +137,12 @@ namespace BakeryProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            return NotFound("Delete feature yet to implement");
+        }
+
         private void UploadImageToFolder(IFormFile productImage)
         {
             string imgFolder = Path.Combine(_webHost.WebRootPath, "images");

@@ -39,7 +39,7 @@
             </td>           
             <td>
                 <a asp-action="EditProduct" asp-route-id="@item.Id" class="btn btn-info">Edit Product</a> | 
-                <a href="#" class="btn btn-danger">Delete</a>
+                <a asp-controller="Products" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
             </td>
         </tr>
 }
